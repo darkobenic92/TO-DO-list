@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #131111, #e40808);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #333333;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#addTaskBtn {
+    padding: 12px 18px;
+    border: none;
+    background-color: #28a745;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Task list */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Task item */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f7e9;
+    padding: 12px 15px;
+    border-radius: 8px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    will-change: transform;
+}
+
+/* Completed task */
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    background-color: #d6d6d6;
+}
+
+/* Delete animation */
+li.removing {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+/* Task label */
+.task-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Buttons */
+button.edit,
+button.delete {
+    margin-left: 6px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #ffc107;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    #addTaskBtn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
